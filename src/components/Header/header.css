@@ -1,90 +1,52 @@
-.logo{
-   font-size: 1.8rem;
-   color: #f39c12;
-   text-shadow: 3px 3px 6px #000;/*sombra de texto*/
-   transition: transform 0.4s ease;/*Suaviza a animação*/
+/* App.css */
+
+/* Logo */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #67e689; /* Cor verde personalizada */
 }
 
-.logo:hover{
-    transform: scale(1.1);/*aumenta levemente a logo ao passar o mouse*/
-
-}
-
-.logo a{
-    color: #f39c12;
-    text-decoration: none;
-}
-
-/*header*/
-
-header{
-    min-height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2c3e50;
-    padding: 20px 40px;
-    color: #fff;
-    box-shadow: 0px 5px 12px #000;/*caixa de sombra mais pronunciada*/
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-/*navegação*/
-nav{
-    display: flex;
-    gap: 20px; /*Espaçamento entre os itens*/
-}
-
-.nav a{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
+/* Ajuste para o menu de navegação */
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
     position: relative;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out; /* Transição suave nas cores */
 }
 
-nav a::after{
+/* Animação do hover nas âncoras */
+.nav-link::after {
+    content: '';
     position: absolute;
     width: 0;
-    height: 3px;
-    bottom: -4px;
-    left: 50%;
-    background-color: #67e689;
-    transition: width 0.3s ease, left 0.3 ease;
-    border-radius: 5px;
-
-}
-
-
-
-nav a:hover {
-    color: #67e689;
-    transform: translateY(-3px);/*Efeito de elevação ao passar o mouse*/
-
-}
-
-nav a:hover::after{
-    width: 100%;
+    height: 2px;
+    bottom: -5px;
     left: 0;
-}
-
-/*Botão de login*/
-
-nav .login-btn{
     background-color: #67e689;
-    color: #2c3e50;
-    padding: 10px 20px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-
+    transition: width 0.3s ease-in-out;
 }
 
-nav .login-btn:hover{
-    background-color: #fff;
-    color: #67e689;
-    box-shadow: 0px 4px 8px #000;/*Adicionando mais profundidade*/
+/* Efeito hover: cor e sublinhado animado */
+.nav-link:hover {
+    color: #67e689; /* Cor verde personalizada ao passar o mouse */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Sublinhado animado aparece ao passar o mouse */
+}
+
+/* Responsividade para o header */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
 }
